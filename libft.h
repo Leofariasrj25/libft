@@ -6,11 +6,12 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 13:38:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/03 13:41:03 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/03 13:51:17 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef
+#ifndef LIBFT_H
+#define LIBFT_H
 # include <stdlib.h>
 # include <stddef.h>
 
