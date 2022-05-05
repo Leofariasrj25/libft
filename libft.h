@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 13:38:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/05 12:12:52 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/05 14:17:09 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,4 +28,5 @@ void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
+char	*ft_strchr(const char *s, int c);
 #endif
