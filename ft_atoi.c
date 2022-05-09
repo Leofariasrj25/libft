@@ -6,12 +6,11 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/07 14:28:49 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/07 15:31:48 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:19:22 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
 static int	ft_isspace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' || c == '\f'
