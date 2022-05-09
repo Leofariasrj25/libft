@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 13:38:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/07 17:00:08 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/09 10:51:37 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
 #endif
