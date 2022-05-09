@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 10:39:07 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/09 10:57:06 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/09 18:09:50 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	str = calloc(s1_len + s2_len + 1, sizeof(char));
+	str = ft_calloc(s1_len + s2_len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	ft_strlcpy(str, s1, s1_len + 1);
