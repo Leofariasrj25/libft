@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:02:10 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/10 17:23:10 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/12 14:33:54 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 	{
 		while (s[i] != '\0')
 		{
-			(*f)(i, s);
+			(*f)(i, (s + i));
 			i++;
 		}
 	}
