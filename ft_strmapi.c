@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 15:48:38 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/10 16:04:00 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:24:11 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*dest;
 	int		i;
 
-	if (!s)
+	if (!s || !f)
 		return (NULL);
 	dest = ft_calloc(ft_strlen(s) + 1, sizeof(char));
 	if (!dest)
