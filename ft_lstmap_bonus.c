@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/14 15:16:07 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/14 17:17:58 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/15 15:45:28 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,9 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_list;
 	t_list	*new_node;
 
-	if (!lst || !f || !del)
+	if (!lst)
 		return (NULL);
-	new_list = ft_lstnew((*f)(lst->content));
-	lst = lst->next;
+	new_list = 0;
 	while (lst)
 	{
 		new_node = ft_lstnew((*f)(lst->content));
