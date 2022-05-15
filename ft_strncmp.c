@@ -6,13 +6,25 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 14:22:52 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/05 15:41:20 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/15 14:13:40 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
+#include <stdio.h>
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	return ((int) ft_memcmp(s1, s2, n));
+	size_t	i;
+
+	i = 0;
+	while (s1[i] != '\0' && i < n - 1)
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+			break ;
+	}
+	return ((unsigned char) s1[i] - (unsigned char) s2[i]);
 }
