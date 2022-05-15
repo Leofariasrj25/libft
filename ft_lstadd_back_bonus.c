@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 16:07:39 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/14 17:13:23 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/15 15:24:08 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last_node;
 
-	if (!lst && new)
+	if (!(*lst) && new)
 	{
 		*lst = new;
 		new->next = NULL;
