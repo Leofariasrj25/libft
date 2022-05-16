@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:33:36 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/10 12:51:16 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/15 00:26:08 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ char	*ft_itoa(int n)
 		nbr = n;
 	digits += ft_get_dgts(nbr);
 	nbr_s = ft_calloc(digits + 1, sizeof(char));
+	if (!nbr_s)
+		return (NULL);
 	while (digits)
 	{
 		nbr_s[--digits] = nbr % 10 + 48;

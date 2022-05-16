@@ -6,7 +6,7 @@
 #    By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 13:14:18 by lfarias-          #+#    #+#              #
-#    Updated: 2022/05/14 17:54:10 by lfarias-         ###   ########.fr        #
+#    Updated: 2022/05/15 15:18:32 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ BONUSES		=	ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstclear_bonus.c \
 OBJS		=	$(SRCS:.c=.o)
 BOBJS		=	$(BONUSES:.c=.o)
 LIBFT		=	ar -rcs
-INCLUDES	=		
+INCLUDES	=	.
 
 $(NAME):
 	$(CC) $(CFLAGS) -I$(INCLUDES) $(SRCS)
@@ -44,5 +44,11 @@ fclean: clean
 
 re: fclean all
 
+bonus: 
+
+so:
+	$(CC) -fPIC $(CFLAGS) $(SRCS) $(BONUSES)
+	gcc -shared -o libft.so $(OBJS) $(BOBJS)
+
 .PHONY:
-	all clean fclean re
+	all clean fclean re bonus
