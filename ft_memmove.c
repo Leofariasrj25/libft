@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 12:43:15 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/04 14:18:34 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:07:14 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,29 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*dst_temp;
-	char	*src_temp;
+	char	*source;
+	char	*dest;
 	size_t	i;
 
-	dst_temp = (char *) dst;
-	src_temp = (char *) src;
-	if (src_temp == dst_temp || len == 0)
-		return (dst);
-	i = -1;
-	if (dst_temp > src_temp && (dst_temp - src_temp < (int) len))
+	if (dst == src || len == 0)
+		return ((char *) dst);
+	source = (char *) src;
+	dest = (char *) dst;
+	if (source > dest)
 	{
-		i = len;
-		while (--i >= 0)
-			dst_temp[i] = src_temp[i];
-		return (dst_temp);
+		i = 0;
+		while (i < len)
+		{
+			dest[i] = source[i];
+			i++;
+		}
+		return (dest);
 	}
-	if (src_temp > dst_temp && (dst_temp - src_temp < (int) len))
+	i = len - 1;
+	while ((int) i >= 0)
 	{
-		while (++i < len)
-			dst_temp[i] = src_temp[i];
-		return (dst_temp);
+		dest[i] = source[i];
+		i--;
 	}
-	ft_memcpy(dst, src, len);
-	return (dst);
+	return (dest);
 }

@@ -6,7 +6,7 @@
 #    By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 13:14:18 by lfarias-          #+#    #+#              #
-#    Updated: 2022/05/15 15:18:32 by lfarias-         ###   ########.fr        #
+#    Updated: 2022/05/17 10:44:12 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,17 +38,16 @@ all:
 	$(CC) $(CFLAGS) *.c
 	
 clean:
-	rm -f ./a.
+	rm -f $(OBJS) $(BOBJS)
 
 fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
 
-bonus: 
-
-so:
-	$(CC) -fPIC $(CFLAGS) $(SRCS) $(BONUSES)
-	gcc -shared -o libft.so $(OBJS) $(BOBJS)
+bonus: $(NAME) 
+	$(CC) $(CFLAGS) -I$(INCLUDES) $(BONUSES)
+	ar -qs $(NAME) $(BOBJS)
 
 .PHONY:
 	all clean fclean re bonus

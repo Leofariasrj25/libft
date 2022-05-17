@@ -6,51 +6,114 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 13:39:04 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/09 18:31:09 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/17 16:06:40 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	sep_counter(char *str, char c)
+static int	word_counter(char *str, char sep)
 {
-	int	sep_count;
+	int		word_count;
+	int		w_found;
 
-	sep_count = 0;
+	word_count = 0;
+	w_found = 0;
 	while (*str != '\0')
 	{
-		if (*str == c)
-			sep_count++;
+		if (*str != sep && !w_found)
+		{
+			word_count++;
+			w_found = 1;
+		}
+		else if (*str == sep)
+			w_found = 0;
 		str++;
 	}
-	return (sep_count);
+	return (word_count);
 }
 
-char	**ft_split(char const *s, char c)
+static int	word_size(char *str, char sep)
 {
-	char	*str;
-	char	**strs;
-	char	*sub_str;
-	size_t	i;
-	size_t	str_len;
+	int	word_size;
 
-	strs = ft_calloc(sep_counter((char *) s, c) + 2, sizeof(char));
-	str = (char *) s;
-	str_len = 0;
-	i = 0;
+	word_size = 0;
 	while (*str != '\0')
 	{
-		if (*str == c)
+		if (*str != sep)
 		{
-			sub_str = str + 1;
-			while (*sub_str != c && *sub_str != '\0')
-				sub_str++;
-			strs[i] = calloc(sub_str - str + 1, sizeof(char));
-			ft_strlcpy(strs[i++], str + 1, sub_str - str);
-			str = sub_str;
+			word_size++;
+			str++;
 		}
 		else
-			str++;
+			break ;
+	}
+	return (word_size);
+}
+
+static char	**clean_split(char **strs)
+{
+	int	i;
+
+	i = -1;
+	while (strs[i++])
+		free(strs[i]);
+	free(strs);
+	return (NULL);
+}
+
+static char	*create_word(char **words, char *str, int str_size)
+{
+	char	**aux_words;
+	char	*word;
+
+	aux_words = words;
+	while (*aux_words)
+		aux_words++;
+	word = ft_calloc(str_size + 1, sizeof(char));
+	if (!word)
+	{
+		return (NULL);
+	}
+	ft_strlcpy(word, str, str_size + 1);
+	*aux_words = word;
+	return (word);
+}
+
+char	**ft_split(char const *str, char c)
+{
+	char	**strs;
+	size_t	i;
+	size_t	word_s;
+
+	if (!str)
+		return (NULL);
+	strs = ft_calloc(word_counter((char *) str, c) + 1, sizeof(char *));
+	if (!strs)
+		return (NULL);
+	word_s = 0;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != c)
+		{
+			word_s = word_size((char *) &str[i], c);
+			if (!create_word(strs, (char *) &str[i], (int) word_s))
+				clean_split(strs);
+			i += word_s;
+		}
+		else
+			i++;
 	}
 	return (strs);
 }
+/*int main(void)
+{
+	char **strs = ft_split("Oi-Meu-Nome-E-Leo", '-');
+		for (int i = 0; i < 5; i++) {
+			if (strs[i] != NULL)
+				printf("%s\n", strs[i]);
+			else
+				printf("null\n");
+		}
+}*/

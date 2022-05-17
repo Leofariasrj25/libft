@@ -6,36 +6,36 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 11:36:21 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/12 18:02:19 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/17 15:37:15 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
+
+static int	is_charset(char *set, char c)
+{
+	while (*set && *set != c)
+		set++;
+	if (c == *set)
+		return (1);
+	return (0);
+}
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int	i;
-	int	start;
-	int	end;
+	size_t	end;
 
-	i = -1;
-	start = 0;
+	end = 0;
+	if (!s1 || !set)
+		return (NULL);
+	while (*s1 && is_charset((char *) set, *s1))
+	{
+		s1++;
+	}
 	end = ft_strlen(s1);
-	while (set[++i] != '\0')
+	while (end && is_charset((char *) set, s1[end]))
 	{
-		if (ft_strchr(&s1[start], set[i]))
-			start++;
-		else
-			break ;
+		end--;
 	}
-	i = -1;
-	while (set[++i] != '\0')
-	{
-		if (ft_strrchr(&s1[end], set[i]))
-			end--;
-		else
-			break ;
-	}
-	return (ft_substr(s1, start, end - start));
+	return (ft_substr(s1, 0, end + 1));
 }
