@@ -6,7 +6,7 @@
 #    By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 13:14:18 by lfarias-          #+#    #+#              #
-#    Updated: 2022/05/17 10:44:12 by lfarias-         ###   ########.fr        #
+#    Updated: 2022/05/17 17:19:09 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,9 +34,8 @@ $(NAME):
 	$(CC) $(CFLAGS) -I$(INCLUDES) $(SRCS)
 	$(LIBFT) $(NAME) $(OBJS)
 
-all:
-	$(CC) $(CFLAGS) *.c
-	
+all: $(NAME)
+
 clean:
 	rm -f $(OBJS) $(BOBJS)
 
