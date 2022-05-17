@@ -6,7 +6,7 @@
 #    By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/03 13:14:18 by lfarias-          #+#    #+#              #
-#    Updated: 2022/05/17 17:19:09 by lfarias-         ###   ########.fr        #
+#    Updated: 2022/05/17 17:25:44 by lfarias-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,7 +44,7 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(NAME) 
+bonus: $(NAME)
 	$(CC) $(CFLAGS) -I$(INCLUDES) $(BONUSES)
 	ar -qs $(NAME) $(BOBJS)
 
