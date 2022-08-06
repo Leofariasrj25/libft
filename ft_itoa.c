@@ -6,12 +6,11 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 18:33:36 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/15 00:26:08 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:12:21 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_get_dgts(unsigned long nbr)
 {

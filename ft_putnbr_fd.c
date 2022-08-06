@@ -6,12 +6,11 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 14:43:07 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/05/15 00:24:52 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/05/17 17:12:31 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static void	ft_putnbr(unsigned long nbr, int fd)
 {
