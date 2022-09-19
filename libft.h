@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 13:38:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/09/19 18:47:56 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:28:48 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ int		ft_tolower(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_iscntrl(int c);
+int		ft_ispunct(int c);
+int		ft_isspace(int c);
 
 // memory manipulation
 void	*ft_memset(void *b, int c, size_t len);
