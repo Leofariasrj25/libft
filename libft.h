@@ -6,7 +6,7 @@
 /*   By: lfarias- <leofariasrj25@gmail.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 13:38:42 by lfarias-          #+#    #+#             */
-/*   Updated: 2022/09/19 15:31:30 by lfarias-         ###   ########.fr       */
+/*   Updated: 2022/09/19 15:44:56 by lfarias-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int		ft_isalnum(int c);
 int		ft_isprint(int c);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+int		ft_islower(int c);
+int		ft_isupper(int c);
 
 // memory manipulation
 void	*ft_memset(void *b, int c, size_t len);
